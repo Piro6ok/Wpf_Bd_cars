@@ -1,0 +1,26 @@
+﻿<Window x:Class="Wpf_Bd_cars.SkockWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Bd_cars"
+        mc:Ignorable="d"
+        Title="StockWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid Background="AliceBlue">
+            <TextBlock Text="Склады" FontSize="36" HorizontalAlignment="Center"/>
+        </Grid>
+        <DataGrid Grid.Row="1" x:Name="stocksList" AutoGenerateColumns="False" ItemsSource="{Binding}" FontSize="16">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Склад" Binding="{Binding Stocks}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Сохранить изменения" Margin="10" Grid.Row="3" HorizontalAlignment="Left" Click ="SaveChanges"/>
+    </Grid>
+</Window>
